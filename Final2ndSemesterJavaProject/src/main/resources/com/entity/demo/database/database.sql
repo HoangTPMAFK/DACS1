@@ -11,6 +11,7 @@ CREATE TABLE PublicMessage (
     sendTime DATETIME NOT NULL
 );
 ALTER TABLE PublicMessage ADD CONSTRAINT PK_PublicMessage PRIMARY KEY (sender, sendTime);
+ALTER TABLE PublicMessage ADD CONSTRAINT FK_PublicMessage_Accounts FOREIGN KEY (sender) REFERENCES Accounts(userId);
 CREATE TABLE Contacts (
 	userId1 VARCHAR(225) NOT NULL,
     userId2 VARCHAR(225) NOT NULL,
